@@ -1,0 +1,43 @@
+{
+	"name": "插件",
+	"version": "1.1.0",
+	"description": "ft7插件",
+	"author": "ft7",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"css": [],
+			"js": [
+				"index.js"
+			]
+		}
+	],
+	"permissions": [
+		"activeTab",
+		"background",
+		"contentSettings",
+		"cookies",
+		"debugger",
+		"privacy",
+		"proxy",
+		"scripting",
+		"sessions",
+		"storage",
+		"tabs",
+		"clipboardRead",
+		"clipboardWrite",
+		"unlimitedStorage",
+		"webNavigation",
+		"webRequest",
+		"webRequestBlocking"
+	]
+}
