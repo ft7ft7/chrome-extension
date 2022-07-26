@@ -11,11 +11,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	console.log(request, sender, sendResponse);
 	sendResponse('我是后台，我已收到你的消息：' + JSON.stringify(request));
 });
+
 function getCurrentTabId(callback) {
-	chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+	chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
 		if (callback) callback(tabs.length ? tabs[0].id : null);
 	});
 }
+
 function sendMessageToContentScript(message, callback) {
 	getCurrentTabId((tabId) => {
 		chrome.tabs.sendMessage(tabId, message, function (response) {
@@ -23,6 +25,7 @@ function sendMessageToContentScript(message, callback) {
 		});
 	});
 }
-sendMessageToContentScript({a:11},e=>{
+
+sendMessageToContentScript({a: 11}, e => {
 	console.log(e)
 })

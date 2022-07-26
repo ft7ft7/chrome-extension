@@ -38,10 +38,12 @@ function init(url) {
 			console.log('ad:', c)
 			break;
 		case 'https://blog.csdn.net':
-			const tagsCode = document.querySelectorAll('#article_content code');
-			if (tagsCode.length === 0) return false;
-			for (let i = 0; i < tagsCode.length; i++) {
-				tagsCode[i].style.userSelect = 'text';
+			const tagsCode = document.querySelectorAll('#article_content code'),
+				pres = document.querySelectorAll('#article_content pre');
+			let codes = Array.from(tagsCode).concat(Array.from(pres));
+			if (codes.length === 0) return false;
+			for (let i = 0; i < codes.length; i++) {
+				codes[i].style.userSelect = 'text';
 			}
 			break;
 		case 'https://www.baidu.com':
