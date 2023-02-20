@@ -8,16 +8,19 @@
 		"default_popup": "popup.html"
 	},
 	"background": {
-		"service_worker": "background.js"
+		//	"service_worker": "background.js"
 	},
 	"content_scripts": [
 		{
 			"matches": [
 				"<all_urls>"
 			],
-			"css": [],
+			"css": [
+				"index.css"
+			],
 			"js": [
-				"index.js"
+				"index.js",
+				"webConfig/tencent.js"
 			]
 		}
 	],
@@ -25,19 +28,14 @@
 		"activeTab",
 		"background",
 		"contentSettings",
-		"cookies",
-		"debugger",
-		"privacy",
-		"proxy",
 		"scripting",
-		"sessions",
 		"storage",
 		"tabs",
 		"clipboardRead",
 		"clipboardWrite",
 		"unlimitedStorage",
 		"webNavigation",
-		"webRequest",
-		"webRequestBlocking"
+		"webRequest"
+		//		"webRequestBlocking"
 	]
 }
