@@ -1,4 +1,5 @@
-const config = [{uri: 'cloud.tencent.com', src: 'tencent'}];
+const config = [{uri: 'cloud.tencent.com', src: 'tencent'},
+	{uri: 'blog.csdn.net', src: 'csdn'}];
 const urlOrigin = window.location.origin;
 let type = '';
 console.log(urlOrigin)
@@ -10,8 +11,6 @@ for (let i = 0; i < config.length; i++) {
 }
 if (/cn.bing.com/.test(urlOrigin)) {
 	type = 0;
-} else if (/blog.csdn.net/.test(urlOrigin)) {
-	type = 1;
 } else if (/baidu.com/.test(urlOrigin)) {
 	type = 2;
 }
@@ -60,15 +59,6 @@ function init(type) {
 				}
 			}
 			console.log('ad:', c)
-			break;
-		case 1:
-			const tagsCode = document.querySelectorAll('#article_content code'),
-				pres = document.querySelectorAll('#article_content pre');
-			let codes = Array.from(tagsCode).concat(Array.from(pres));
-			if (codes.length === 0) return false;
-			for (let i = 0; i < codes.length; i++) {
-				codes[i].style.userSelect = 'text';
-			}
 			break;
 		case 2:
 			result = document.getElementById('content_left');
