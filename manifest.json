@@ -20,7 +20,9 @@
 			],
 			"js": [
 				"index.js",
-				"webConfig/tencent.js"
+				"webConfig/tencent.js",
+				"webConfig/csdn.js",
+				"webConfig/zhiHu.js"
 			]
 		}
 	],

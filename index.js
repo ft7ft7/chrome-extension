@@ -1,5 +1,6 @@
 const config = [{uri: 'cloud.tencent.com', src: 'tencent'},
-	{uri: 'blog.csdn.net', src: 'csdn'}];
+	{uri: 'blog.csdn.net', src: 'csdn'},
+	{uri: 'zhuanlan.zhihu.com', src: 'zhiHu'}];
 const urlOrigin = window.location.origin;
 let type = '';
 console.log(urlOrigin)
