@@ -1,11 +1,45 @@
 function request() {
-	chrome.webRequest.onBeforeRequest.addListener(info => {
-		console.log(info)
-		return {cancel: true};
-	}, {urls: ["<all_urls>"]}, ["blocking"]);
+	let rules = [{
+		id: 1,
+		priority: 1,
+		action: {type: "block"},
+		condition: {
+			urlFilter: ".js",
+			domains: ['ol.3dmgame.com', 'juejin.cn'],
+			resourceTypes: ["script"]
+			// resourceTypes: ["csp_report", "font", "image", "main_frame", "media", "object",
+			// 	"other", "ping", "script", "stylesheet", "sub_frame",
+			// 	"webbundle", "websocket", "webtransport", "xmlhttprequest"]
+		}
+	}];
+	// console.log(chrome.declarativeNetRequest)
+	// chrome.declarativeNetRequest.updateDynamicRules({
+	// 	addRules: [{
+	// 		id: 2,
+	// 		priority: 1,
+	// 		action: {type: "block"},
+	// 		condition: {
+	// 			urlFilter: "<all_urls>",
+	// 			domains: ["juejin.cn"],
+	// 			resourceTypes: ["script"]
+	// 		}
+	// 	}]
+	// }, function () {
+	// })
+	chrome.declarativeNetRequest.getDynamicRules(res => {
+		// console.log(res)
+		let rulesId = res.map(e => e.id);
+		chrome.declarativeNetRequest.updateDynamicRules({
+				addRules: rules,
+				removeRuleIds: rulesId,
+			},
+			function (callback) {
+			}
+		);
+	});
 }
 
-// request();
+request();
 // chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 // 	console.log('收到来自content-script的消息：');
 // 	console.log(request, sender, sendResponse);

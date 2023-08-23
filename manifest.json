@@ -5,10 +5,11 @@
 	"author": "ft7",
 	"manifest_version": 3,
 	"action": {
+		"default_title": "ft插件",
 		"default_popup": "popup.html"
 	},
 	"background": {
-		//	"service_worker": "background.js"
+		"service_worker": "background.js"
 	},
 	"content_scripts": [
 		{
@@ -37,7 +38,12 @@
 		"clipboardWrite",
 		"unlimitedStorage",
 		"webNavigation",
-		"webRequest"
-		//		"webRequestBlocking"
+		"webRequest",
+		"declarativeNetRequest",
+		"declarativeNetRequestWithHostAccess",
+		"declarativeNetRequestFeedback"
+	],
+	"host_permissions": [
+		"<all_urls>"
 	]
 }
