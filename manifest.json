@@ -23,7 +23,8 @@
 				"index.js",
 				"webConfig/tencent.js",
 				"webConfig/csdn.js",
-				"webConfig/zhiHu.js"
+				"webConfig/zhiHu.js",
+				"webConfig/qqNews.js"
 			]
 		}
 	],
