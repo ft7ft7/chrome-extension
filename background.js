@@ -5,7 +5,7 @@ function request() {
 		action: {type: "block"},
 		condition: {
 			urlFilter: ".js",
-			domains: ['ol.3dmgame.com', 'juejin.cn', 'tieba.baidu.com', 'www.sohu.com', 'new.qq.com', 'caifuhao.eastmoney.com'],
+			domains: ['ol.3dmgame.com', 'juejin.cn', 'tieba.baidu.com', 'www.sohu.com', 'new.qq.com', 'caifuhao.eastmoney.com', 'zhihu.com'],
 			resourceTypes: ["script"]
 			// resourceTypes: ["csp_report", "font", "image", "main_frame", "media", "object",
 			// 	"other", "ping", "script", "stylesheet", "sub_frame",
