@@ -9,3 +9,13 @@ for (let i = 0; i < arrTagA.length; i++) {
 	});
 	v.href = decodeURIComponent(uri);
 }
+const imgListZhiHu = document.querySelectorAll('img');
+for (let img of imgListZhiHu) {
+	// console.log(img.src)
+	const src = img.getAttribute('data-actualsrc') || img.getAttribute('data-original');
+	if (/data:image/.test(img.src)) {
+		img.style.display = 'none';
+		continue;
+	}
+	if (src) img.src = src;
+}
