@@ -11,7 +11,18 @@ function request() {
 			// 	"other", "ping", "script", "stylesheet", "sub_frame",
 			// 	"webbundle", "websocket", "webtransport", "xmlhttprequest"]
 		}
-	}];
+	},
+		{
+			id: 2,
+			priority: 1,
+			action: {type: "block"},
+			condition: {
+				// urlFilter: "/uaredirectforpc.js",
+				regexFilter: "(uaredirectforpc.js$|wz.js$)",
+				initiatorDomains: ["mjtt5.tv"],
+				resourceTypes: ["script"]
+			}
+		}];
 	// console.log(chrome.declarativeNetRequest)
 	// chrome.declarativeNetRequest.updateDynamicRules({
 	// 	addRules: [{
