@@ -45,6 +45,10 @@ const init = {
 			v.style.mask = 'unset';
 			v.style.maxHeight = 'unset';
 		});
+		const fxar0w = document.querySelectorAll('.css-fxar0w');
+		fxar0w.forEach(v => {
+			v.style.display = 'none';
+		});
 	},
 	qqNews: () => {
 		const content = document.body.getElementsByClassName('qq_conent')?.[0];
